@@ -40,45 +40,45 @@ function App() {
 
     userTotalData +=
       formData.foodType === "Vegetarian" ? 100 :
-      formData.foodType === "Lacto-Vegetarian" ? 200 :
-      formData.foodType === "Pescetarian" ? 300 :
-      formData.foodType === "Flexitarian" ? 400 :
-      formData.foodType === "Non-Vegetarian" ? 500 : 0;
+        formData.foodType === "Lacto-Vegetarian" ? 200 :
+          formData.foodType === "Pescetarian" ? 300 :
+            formData.foodType === "Flexitarian" ? 400 :
+              formData.foodType === "Non-Vegetarian" ? 500 : 0;
 
     userTotalData +=
       formData.meatType === "Beef" ? 800 :
-      formData.meatType === "Mutton" ? 750 :
-      formData.meatType === "Bacon" ? 700 :
-      formData.meatType === "Pork" ? 650 :
-      formData.meatType === "Turkey" ? 500 :
-      formData.meatType === "Duck" ? 450 :
-      formData.meatType === "Chicken" ? 400 :
-      formData.meatType === "Seafood" ? 300 : 0;
+        formData.meatType === "Mutton" ? 750 :
+          formData.meatType === "Bacon" ? 700 :
+            formData.meatType === "Pork" ? 650 :
+              formData.meatType === "Turkey" ? 500 :
+                formData.meatType === "Duck" ? 450 :
+                  formData.meatType === "Chicken" ? 400 :
+                    formData.meatType === "Seafood" ? 300 : 0;
 
     userTotalData +=
       formData.clothType === "Silk" ? 700 :
-      formData.clothType === "Velvet" ? 660 :
-      formData.clothType === "Georgette" ? 640 :
-      formData.clothType === "Nylon" ? 580 :
-      formData.clothType === "Wool" ? 550 :
-      formData.clothType === "Rayon" ? 510 :
-      formData.clothType === "Denim" ? 470 :
-      formData.clothType === "Cotton" ? 440 : 0;
+        formData.clothType === "Velvet" ? 660 :
+          formData.clothType === "Georgette" ? 640 :
+            formData.clothType === "Nylon" ? 580 :
+              formData.clothType === "Wool" ? 550 :
+                formData.clothType === "Rayon" ? 510 :
+                  formData.clothType === "Denim" ? 470 :
+                    formData.clothType === "Cotton" ? 440 : 0;
 
     userTotalData += Number(formData.IntTravelPerYear) * 200 || 0;
 
     userTotalData +=
       formData.buildingType === "High-Rise" ? 500 :
-      formData.buildingType === "Low-Rise" ? 300 :
-      formData.buildingType === "Independent" ? 650 : 0;
+        formData.buildingType === "Low-Rise" ? 300 :
+          formData.buildingType === "Independent" ? 650 : 0;
 
     userTotalData += Number(formData.waterUsageDay) || 0;
 
     userTotalData +=
       formData.transportType === "Bus" ? 600 :
-      formData.transportType === "Bike" ? 400 :
-      formData.transportType === "Car" ? 500 :
-      formData.transportType === "Train" ? 750 : 0;
+        formData.transportType === "Bike" ? 400 :
+          formData.transportType === "Car" ? 500 :
+            formData.transportType === "Train" ? 750 : 0;
 
     if (formData.workCulture === "at home") {
       userTotalData /= 2;
@@ -94,9 +94,9 @@ function App() {
 
     userTotalData +=
       formData.fuelTypeVehicle === "Petrol" ? 500 :
-      formData.fuelTypeVehicle === "Diesel" ? 450 :
-      formData.fuelTypeVehicle === "Gasoline" ? 600 :
-      formData.fuelTypeVehicle === "Hydrogen" ? 250 : 0;
+        formData.fuelTypeVehicle === "Diesel" ? 450 :
+          formData.fuelTypeVehicle === "Gasoline" ? 600 :
+            formData.fuelTypeVehicle === "Hydrogen" ? 250 : 0;
 
     return userTotalData;
   };
@@ -111,9 +111,9 @@ function App() {
   const nextSlide = () => setCurrentSlide(prev => (prev + 1) < totalSlides ? prev + 1 : prev);
   const prevSlide = () => setCurrentSlide(prev => prev > 0 ? prev - 1 : prev);
 
-  <video autoPlay muted loop id="background-video" style={{position: "fixed", right: 0, bottom: 0, minWidth: "100vw",minHeight: "100vh", zIndex: -1, objectFit: "cover" }}>
-  <source src="../background_vid.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
+  <video autoPlay muted loop id="background-video" style={{ position: "fixed", right: 0, bottom: 0, minWidth: "100vw", minHeight: "100vh", zIndex: -1, objectFit: "cover" }}>
+    <source src="../background_vid.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
   </video>
 
 

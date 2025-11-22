@@ -1,1 +1,26 @@
-# Synthax2K25
+# BIOMATRIX
+
+# TEAM MEMBERS
+
+
+
+
+
+
+# FRAMEWORKS USED
+
+
+
+
+
+
+
+
+# STUFF FROM INTERNET USED
+
+
+
+
+
+
+
