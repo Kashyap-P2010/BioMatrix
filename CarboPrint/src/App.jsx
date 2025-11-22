@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import bgVideo from "./background_vid.mp4"; 
+import bgVideo from "./Background_vid.mp4"; 
 
 function App() {
   const [formData, setFormData] = useState({
