@@ -1,48 +1,56 @@
-# **BIOMATRIX**
+# Project Overview
+Hey, we are BioMatrix, a matrix that strives to solve all environment related problems around the globe, as our time was limited we are solving problems of excessive carbon footprint, poor waste classification and tweaking around the same.
 
-A modern platform designed to streamline and visualize biological data with an intuitive interface and interactive tools.
+# Problem Statement
+Modern cities face a stacked sustainability crisis: waste is mismanaged because people don’t know how to sort it, buildings are built with zero focus on sustainability or heat efficiency, and households keep emitting carbon without any real tracking or awareness. This combo fuels climate change, overheats urban spaces, and increases pollution, all because everyday users lack simple, accessible tools to guide better choices.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus ex sapien, vitae pellentesque sem placerat in. Cursus mi pretium tellus, duis convallis tempus leo. Aenean sed diam urna. Vivamus fringilla lacus nec metus pulvinar, et tempor urna volutpat.
 
----
+# Tech Stack
+LANGUAGES:
+HTML
+CSS
+JAVASCRIPT
+REACT
+PYTHON
+TYPESCRIPT
+MARKDOWN
 
-## 🚀 **Features**
-- Clean and interactive UI  
-- Real-time data visualization  
-- Responsive and fast frontend  
-- Modular and scalable architecture  
+FRAMEWORKS:
+FLASH GEMINI API
+CV2,CVZONE ETC
+TAILWIND
+VITE
+TENSORFLOW
+JSONIFY
+RENDER
+STREAMLIT
+FLASK
+NUMPY
+MATPLOTLIB
+PLOTLY
 
----
+# DIVISION OF WORK
+KASHYAP - GREEN GUARDIAN - Sustainable Construction Project
+ANSHUMAN - CARBOPRINT - Carbon Footprint Tracker
+ARAV - WASTE CLASSIFIER - Computer Vision etc
+ATHARV - GREEN ROOM - Entire project
 
-## 👥 **Team Members**
-- **Kashyap**  
-- **Anshuman**  
-- **Arav**  
-- **Atharv**
+# VIDEO
 
----
+LINK:
 
-## 🧰 **Frameworks & Technologies Used**
-### **Frontend**
-- React  
-- Vite  
-- TailwindCSS  
+# DISCLOSURES:
+CHATGPT:
+DEBUGGING
+CSS DOUBTS (HOW TO CENTER DIV ETC ETC)
+Gemini Flash:
+API for AI
+THIRD PARTY ASSETS:
+NULL (MINIMAL, we can hardly recall much)
 
-### **Backend / Visualization**
-- Streamlit  
-- Matplotlib  
-- Plotly  
-- NumPy  
+Licenses:
+Google Gemini (Paid for the API)
 
----
+Datasets:
+Own datasets
 
-## 🌐 **External Resources**
-- Header image sourced from **Unsplash**
-- Google fonts
-
----
-
-## 🤖 **AI Assistance**
-- **ChatGPT** — used exclusively for debugging support and formatting this README.
-
----
