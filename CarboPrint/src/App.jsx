@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import bgVideo from "./Background_vid.mp4"; 
 
+
+
 function App() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -21,10 +23,11 @@ function App() {
     DailyTravel: ""
   });
 
+
   const [carbonFootprint, setCarbonFootprint] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const totalSlides = 15; 
+
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -34,9 +37,9 @@ function App() {
     }));
   };
 
+
   const calculateCarbonFootprint = () => {
     let userTotalData = 0;
-
     if (formData.vehicleOwned === "Yes") userTotalData += 500;
 
     userTotalData +=
@@ -81,14 +84,18 @@ function App() {
       formData.transportType === "Car" ? 500 :
       formData.transportType === "Train" ? 750 : 0;
 
+
     if (formData.workCulture === "at home") {
       userTotalData /= 2;
+
     } else if (formData.workCulture === "at office") {
       userTotalData *= 2;
     }
 
+
     if (formData.Gardens === "Yes") {
       userTotalData /= 2;
+
     } else if (formData.Gardens === "No") {
       userTotalData *= 1.5;
     }
@@ -107,8 +114,11 @@ function App() {
 
     userTotalData += Number(formData.DailyTravel) * 10 || 0;
 
+
     return Math.round(userTotalData);
   };
+
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -117,11 +127,15 @@ function App() {
     setCurrentSlide(totalSlides); 
   };
 
+
   const nextSlide = () => setCurrentSlide(prev => (prev + 1 < totalSlides + 1 ? prev + 1 : prev));
   const prevSlide = () => setCurrentSlide(prev => (prev > 0 ? prev - 1 : prev));
 
+
   return (
+
     <div id="root">
+
       <video autoPlay muted loop playsInline className="bg-video">
         <source src={bgVideo} type="video/mp4" />
       </video>
@@ -132,52 +146,33 @@ function App() {
         {currentSlide === 0 && (
           <div className="form-slide">
             <label htmlFor="firstName">First Name</label>
-            <input 
-              className="form" 
-              id="firstName"
-              placeholder="Enter First Name" 
-              name="firstName" 
-              value={formData.firstName} 
-              onChange={handleChange} 
-            />
+            <input className="form" id="firstName" placeholder="Enter First Name" name="firstName" value={formData.firstName} onChange={handleChange}/>
             
             <label htmlFor="lastName">Last Name</label>
-            <input 
-              className="form" 
-              id="lastName"
-              placeholder="Enter Last Name" 
-              name="lastName" 
-              value={formData.lastName} 
-              onChange={handleChange} 
-            />
+            <input className="form" id="lastName"placeholder="Enter Last Name" name="lastName" value={formData.lastName} onChange={handleChange} />
           </div>
         )}
 
+
         {currentSlide === 1 && (
           <div className="form-slide">
+
             <label htmlFor="vehicleOwned">Do you own a vehicle?</label>
-            <select
-              id="vehicleOwned"
-              name="vehicleOwned" 
-              value={formData.vehicleOwned} 
-              onChange={handleChange}
-            >
+            <select id="vehicleOwned" name="vehicleOwned" value={formData.vehicleOwned} onChange={handleChange} >
               <option value="">Select an option</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
+
           </div>
         )}
 
+
         {currentSlide === 2 && (
           <div className="form-slide">
+
             <label htmlFor="foodType">Choose one of the food types:</label>
-            <select 
-              id="foodType"
-              name="foodType" 
-              value={formData.foodType} 
-              onChange={handleChange} 
-            >
+            <select id="foodType" name="foodType" value={formData.foodType} onChange={handleChange}>
               <option value="">Select a food type</option>
               <option value="Vegetarian">Vegetarian (No meat, eggs)</option>
               <option value="Lacto-Vegetarian">Lacto-Vegetarian (Includes dairy)</option>
@@ -185,18 +180,16 @@ function App() {
               <option value="Flexitarian">Flexitarian (Mostly vegetarian, occasional meat)</option>
               <option value="Non-Vegetarian">Non-Vegetarian (Eats meat regularly)</option>
             </select>
+
           </div>
         )}
 
+
         {currentSlide === 3 && (
           <div className="form-slide">
+
             <label htmlFor="meatType">Which meat do you consume most often?</label>
-            <select 
-              id="meatType"
-              name="meatType" 
-              value={formData.meatType} 
-              onChange={handleChange} 
-            >
+            <select id="meatType" name="meatType" value={formData.meatType} onChange={handleChange}>
               <option value="">Select a meat type</option>
               <option value="Beef">Beef</option>
               <option value="Mutton">Mutton/Lamb</option>
@@ -206,18 +199,15 @@ function App() {
               <option value="Chicken">Chicken</option>
               <option value="Seafood">Seafood/Fish</option>
             </select>
+
           </div>
         )}
 
         {currentSlide === 4 && (
           <div className="form-slide">
+
             <label htmlFor="clothType">What type of cloth do you purchase most often?</label>
-            <select
-              id="clothType"
-              name="clothType" 
-              value={formData.clothType} 
-              onChange={handleChange}
-            >
+            <select id="clothType" name="clothType" value={formData.clothType} onChange={handleChange}>
               <option value="">Select a cloth type</option>
               <option value="Cotton">Cotton</option>
               <option value="Denim">Denim</option>
@@ -228,33 +218,23 @@ function App() {
               <option value="Velvet">Velvet</option>
               <option value="Silk">Silk</option>
             </select>
+
           </div>
         )}
+
 
         {currentSlide === 5 && (
           <div className="form-slide">
             <label htmlFor="IntTravelPerYear">International flights per year (Round Trips):</label>
-            <input 
-              type="number" 
-              id="IntTravelPerYear"
-              name="IntTravelPerYear" 
-              value={formData.IntTravelPerYear} 
-              onChange={handleChange} 
-              min="0"
-              placeholder="0 for none"
-            />
+            <input type="number" id="IntTravelPerYear" name="IntTravelPerYear" value={formData.IntTravelPerYear} onChange={handleChange} min="0" placeholder="0 for none"/>
           </div>
         )}
+
 
         {currentSlide === 6 && (
           <div className="form-slide">
             <label htmlFor="buildingType">Type of building you live in:</label>
-            <select
-              id="buildingType"
-              name="buildingType" 
-              value={formData.buildingType} 
-              onChange={handleChange}
-            >
+            <select id="buildingType" name="buildingType" value={formData.buildingType} onChange={handleChange}>
               <option value="">Select a building type</option>
               <option value="Independent">Independent House/Villa</option>
               <option value="High-Rise">Apartment (High-Rise)</option>
@@ -263,30 +243,21 @@ function App() {
           </div>
         )}
 
+
+
         {currentSlide === 7 && (
           <div className="form-slide">
             <label htmlFor="waterUsageDay">Estimated daily water usage (Liters):</label>
-            <input 
-              type="number" 
-              id="waterUsageDay"
-              name="waterUsageDay" 
-              value={formData.waterUsageDay} 
-              onChange={handleChange} 
-              min="0"
-              placeholder="e.g., 150"
-            />
+            <input type="number" id="waterUsageDay" name="waterUsageDay" value={formData.waterUsageDay} onChange={handleChange} min="0" placeholder="e.g., 150"/>
           </div>
         )}
+
+
 
         {currentSlide === 8 && (
           <div className="form-slide">
             <label htmlFor="transportType">Primary daily transport type:</label>
-            <select
-              id="transportType"
-              name="transportType" 
-              value={formData.transportType} 
-              onChange={handleChange}
-            >
+            <select id="transportType" name="transportType" value={formData.transportType} onChange={handleChange}>
               <option value="">Select a transport type</option>
               <option value="Bus">Bus/Public Transport</option>
               <option value="Train">Train/Metro</option>
@@ -297,15 +268,12 @@ function App() {
           </div>
         )}
 
+
+
         {currentSlide === 9 && (
           <div className="form-slide">
             <label htmlFor="workCulture">Primary work location:</label>
-            <select
-              id="workCulture"
-              name="workCulture" 
-              value={formData.workCulture} 
-              onChange={handleChange}
-            >
+            <select id="workCulture" name="workCulture" value={formData.workCulture} onChange={handleChange}>
               <option value="">Select location</option>
               <option value="at home">Work from Home (at home)</option>
               <option value="at office">Work at Office (at office)</option>
@@ -313,15 +281,12 @@ function App() {
           </div>
         )}
 
+
+
         {currentSlide === 10 && (
           <div className="form-slide">
             <label htmlFor="Gardens">Do you have a personal garden/green space?</label>
-            <select
-              id="Gardens"
-              name="Gardens" 
-              value={formData.Gardens} 
-              onChange={handleChange}
-            >
+            <select id="Gardens" name="Gardens" value={formData.Gardens} onChange={handleChange}>
               <option value="">Select an option</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -329,15 +294,12 @@ function App() {
           </div>
         )}
 
+
+
         {currentSlide === 11 && (
           <div className="form-slide">
             <label htmlFor="fuelTypeVehicle">Vehicle fuel type (if owned):</label>
-            <select
-              id="fuelTypeVehicle"
-              name="fuelTypeVehicle" 
-              value={formData.fuelTypeVehicle} 
-              onChange={handleChange}
-            >
+            <select id="fuelTypeVehicle" name="fuelTypeVehicle" value={formData.fuelTypeVehicle} onChange={handleChange}>
               <option value="">Select fuel type</option>
               <option value="Petrol">Petrol/Gasoline</option>
               <option value="Diesel">Diesel</option>
@@ -348,15 +310,12 @@ function App() {
           </div>
         )}
 
+
+
         {currentSlide === 12 && (
           <div className="form-slide">
             <label htmlFor="fuelTypeDomestic">Primary home heating/cooking fuel type:</label>
-            <select
-              id="fuelTypeDomestic"
-              name="fuelTypeDomestic" 
-              value={formData.fuelTypeDomestic} 
-              onChange={handleChange}
-            >
+            <select id="fuelTypeDomestic" name="fuelTypeDomestic" value={formData.fuelTypeDomestic} onChange={handleChange}>
               <option value="">Select fuel type</option>
               <option value="Gas">Natural Gas/LPG</option>
               <option value="Electric">Electricity (Grid)</option>
@@ -365,26 +324,24 @@ function App() {
           </div>
         )}
 
+
+
         {currentSlide === 13 && (
           <div className="form-slide">
             <label htmlFor="DailyTravel">Average daily commute distance (km):</label>
-            <input 
-              type="number" 
-              id="DailyTravel"
-              name="DailyTravel" 
-              value={formData.DailyTravel} 
-              onChange={handleChange} 
-              min="0"
+            <input type="number" id="DailyTravel"name="DailyTravel" value={formData.DailyTravel} onChange={handleChange} min="0"
               placeholder="Distance one way (km)"
             />
           </div>
         )}
+
 
         {currentSlide === 14 && (
           <div className="form-slide">
             <button type="submit">Calculate Footprint</button>
           </div>
         )}
+
 
         {currentSlide === totalSlides && (
           <div className="result-screen">
@@ -397,25 +354,19 @@ function App() {
         )}
       </form>
 
+
       <div className="navigation-controls">
-        <button 
-          className="prev" 
-          onClick={prevSlide} 
-          disabled={currentSlide === 0 || currentSlide === totalSlides}
-        >
+        <button className="prev" onClick={prevSlide} disabled={currentSlide === 0 || currentSlide === totalSlides}>
           &larr; Previous
         </button>
-        <button 
-          className="next" 
-          onClick={nextSlide} 
-          disabled={currentSlide >= totalSlides - 1 || currentSlide === totalSlides}
-        >
+        <button className="next" onClick={nextSlide} disabled={currentSlide >= totalSlides - 1 || currentSlide === totalSlides}>
           Next &rarr;
         </button>
-      </div>
 
+      </div>
     </div>
   );
 }
+
 
 export default App;

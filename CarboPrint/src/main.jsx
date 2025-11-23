@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
-import StartPage from "./StartPage.jsx";
+import StartPage from "./StartPage.jsx"; // ignore this error plzz
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import bgVideo from "./Background_vid.mp4";
 import "./App.css";
 
+
+
 export default function StartPage() {
   return (
     <div className="start-container">
@@ -9,14 +11,16 @@ export default function StartPage() {
         <source src={bgVideo} type="video/mp4" />
       </video>
 
-      {/* Center Content */}
+
       <div className="start-content">
+
         <h1 className="start-title">CarboPrint</h1>
+
         <Link to="/questions">
           <button className="start-btn">Start</button>
         </Link>
-      </div>
 
+      </div>
     </div>
   );
 }
