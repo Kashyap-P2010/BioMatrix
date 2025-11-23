@@ -40,6 +40,7 @@ ATHARV - GREEN ROOM - Entire project
 LINK:
 
 # DISCLOSURES:
+Artificial Intelligence:
 CHATGPT:
 DEBUGGING
 CSS DOUBTS (HOW TO CENTER DIV ETC ETC)
@@ -47,7 +48,7 @@ Gemini Flash:
 API for AI
 THIRD PARTY ASSETS:
 NULL (MINIMAL, we can hardly recall much)
-
+Kittl AI (For logos of the projects in the main page)
 Licenses:
 Google Gemini (Paid for the API)
 
