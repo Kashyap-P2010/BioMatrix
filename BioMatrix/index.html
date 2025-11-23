@@ -11,8 +11,8 @@
     body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background: #f4f8f4;
-        color: #1a2e1a;
+        background: #0b0f0b;
+        color: #d6f5d6;
     }
 
     .hero {
@@ -25,6 +25,7 @@
         color: white;
         text-align: center;
         position: relative;
+        filter: brightness(0.6);
     }
 
     .hero-overlay {
@@ -33,7 +34,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(22, 80, 22, 0.55);
+        background: rgba(14, 100, 14, 0.55);
+        backdrop-filter: blur(1px);
     }
 
     .hero-content {
@@ -45,104 +47,117 @@
         font-size: 55px;
         margin-bottom: 10px;
         font-weight: 600;
+        color: #0fe01a;
+        text-shadow: 0 2px 20px rgba(0,255,0,0.25);
     }
 
     .hero p {
         font-size: 20px;
-        opacity: 0.9;
+        opacity: 0.85;
         font-weight: 300;
-    }
-
-    nav {
-        width: 100%;
-        background: linear-gradient(135deg, #0a7a0a, #0e9b16);
-        color: white;
-        padding: 14px 25px; 
-        font-size: 24px;
-        font-weight: 600;
-        text-align: center;
-        letter-spacing: 1px;
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        color: #e6ffe6;
     }
 
     section {
-        padding: 60px 8%;
+        padding: 40px 8%;
         text-align: center;
     }
 
     .light-green {
-        background: #e9f6e9;
+        background: #111b11;
     }
     .white {
-        background: white;
+        background: #0f160f;
     }
 
     h2 {
         font-size: 34px;
-        margin-bottom: 20px;
-        color: #0b4e0b;
+        margin-bottom: 15px;
+        color: #9aff9a;
         font-weight: 600;
     }
 
     .desc-box {
-        background: white;
+        background: #1a261a;
         padding: 25px;
         border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         max-width: 900px;
         margin: auto;
         line-height: 1.7;
         font-size: 17px;
-        border-left: 5px solid #0e9b16;
-        text-align: left;
+        border-left: 5px solid #15c43b;
+        color: #e6ffe6;
     }
 
     .card-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 22px;
-        margin: 30px auto 0 auto;
+        gap: 25px;
+        margin: 20px auto 0 auto;
         max-width: 1200px;
     }
 
     .card {
         position: relative;
-        height: 200px;
+        height: 260px;
         border-radius: 14px;
         overflow: hidden;
         cursor: pointer;
-        background: #cfe8cf url('https://via.placeholder.com/300x200/84c784/ffffff') center/cover no-repeat;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        border: 2px solid #b2dcb3;
+        background-size: cover !important;
+        background-position: center !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        border: 2px solid #2e4d2f;
+        z-index: 1;
     }
 
     .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-        border-color: #0e9b16;
+        transform: scale(1.06);
+        box-shadow: 0 6px 20px rgba(0,255,80,0.25);
+        border-color: #18ff5e;
     }
 
     .card-label {
         position: absolute;
         top: 10px;
         left: 10px;
-        background: rgba(14, 155, 22, 0.85);
+        background: rgba(24, 180, 40, 0.85);
         padding: 6px 12px;
         color: white;
         font-size: 14px;
         border-radius: 6px;
     }
 
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 70%;
+        height: 100%;
+        background: linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.20) 50%,
+            rgba(255, 255, 255, 0.0) 100%
+        );
+        transform: skewX(-40deg);
+        transition: all 1.25s ease;
+        pointer-events: none;
+    }
+
+    .card:hover::before {
+        left: 140%;
+    }
+
     footer {
         text-align: center;
-        padding: 8px;              
-        background: #0a7a0a;
+        padding: 8px;
+        background: #062906;
         color: white;
         font-size: 14px;
         letter-spacing: 0.5px;
+        border-top: 1px solid #0f3e0f;
     }
 
     .fade-up {
@@ -181,7 +196,7 @@
             grid-template-columns: 1fr;
         }
         .card {
-            height: 180px;
+            height: 220px;
         }
     }
 </style>
@@ -196,14 +211,10 @@
     </div>
 </div>
 
-<nav>BioMatrix</nav>
-
 <section class="light-green">
     <h2 class="fade-up">Problem Statement</h2>
     <div class="desc-box fade-up">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Suspendisse vitae urna eget dolor ultrices faucibus. 
-        Sed placerat, orci a interdum vulputate, justo elit tempor urna.
     </div>
 </section>
 
@@ -212,21 +223,28 @@
 
     <div class="card-container">
 
-        <!-- CLICKABLE CARDS -->
-        <a href="https://greenguardian.streamlit.app/" style="text-decoration:none; background-image:url(images/GreenGuardian.png);" class="fade-up">
-            <div class="card"><div class="card-label">GreenGuardian</div></div>
+        <a href="https://greenguardian.streamlit.app/" style="text-decoration:none;" class="fade-up">
+            <div class="card" style="background-image:url('images/GreenGuardian.png');">
+                <div class="card-label">GreenGuardian</div>
+            </div>
         </a>
 
         <a href="https://example.com/2" style="text-decoration:none;" class="fade-up">
-            <div class="card"><div class="card-label">Sample</div></div>
+            <div class="card" style="background-image:url('https://via.placeholder.com/400x300');">
+                <div class="card-label">Sample</div>
+            </div>
         </a>
 
         <a href="https://example.com/3" style="text-decoration:none;" class="fade-up">
-            <div class="card"><div class="card-label">Sample</div></div>
+            <div class="card" style="background-image:url('https://via.placeholder.com/400x300');">
+                <div class="card-label">Sample</div>
+            </div>
         </a>
 
         <a href="https://example.com/4" style="text-decoration:none;" class="fade-up">
-            <div class="card"><div class="card-label">Sample</div></div>
+            <div class="card" style="background-image:url('https://via.placeholder.com/400x300');">
+                <div class="card-label">Sample</div>
+            </div>
         </a>
 
     </div>
@@ -236,13 +254,10 @@
     <h2 class="fade-up">Our Team</h2>
 
     <div class="card-container">
-
-        
-        <div class="card fade-up"><div class="card-label">.</div></div>
-        <div class="card fade-up"><div class="card-label">.</div></div>
-        <div class="card fade-up"><div class="card-label">.</div></div>
-        <div class="card fade-up"><div class="card-label">.</div></div>
-
+        <div class="card fade-up"></div>
+        <div class="card fade-up"></div>
+        <div class="card fade-up"></div>
+        <div class="card fade-up"></div>
     </div>
 </section>
 
